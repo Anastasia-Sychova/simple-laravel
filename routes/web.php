@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MagazinesController@getAll');
+Route::get('/add', 'MagazinesController@addMagazineForm');
+Route::post('/add', 'MagazinesController@addMagazine');
+Route::get('/{id}/delete', 'MagazinesController@deleteMagazine');
